@@ -8,7 +8,7 @@
 
 //DECLARATIVE
 
-!/bin/bash 
+!/bin/sh 
 pipeline {
 	    //agent any
 		agent { 
