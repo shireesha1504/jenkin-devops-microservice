@@ -8,7 +8,6 @@
 
 //DECLARATIVE
 
-!/bin/sh 
 pipeline {
 	    //agent any
 		agent { 
