@@ -13,10 +13,18 @@ pipeline {
 		// agent { 
 		// 	docker { image 'node:14.5.0' } 
 		// }
+
+		environment {
+			dockerHome = tool 'myDocker'
+			nodeHome = tool 'myNode'
+			PATH = "$dockerHome/bin:nodeHome/bin:$PATH"
+		}
+
 		stages {
 			stage('Build') {
 				steps {
-					//sh 'node --version'
+					sh 'node --version'
+					sh 'docker version'
 					echo "Build"
 					echo "PATH - $PATH"
 					echo "BUILD_NUMBER - $env.BUILD_NUMBER"
