@@ -16,14 +16,14 @@ pipeline {
 
 		environment {
 			dockerHome = tool 'myDocker'
-			nodeHome = tool 'myNode'
-			PATH = "$dockerHome/bin:nodeHome/bin:$PATH"
+			mavenHome = tool 'myManven'
+			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 		}
 
 		stages {
 			stage('Build') {
 				steps {
-					sh 'node --version'
+					sh 'mvn --version'
 					sh 'docker version'
 					echo "Build"
 					echo "PATH - $PATH"
